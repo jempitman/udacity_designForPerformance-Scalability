@@ -1,0 +1,33 @@
+﻿Estimate summary,,,,,,,,,
+Upfront cost,Monthly cost,Total 12 months cost,Currency,,,,,,
+0,6005.12,72061.44,USD,,,,,,
+,,* Includes upfront cost,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+Detailed Estimate,,,,,,,,,
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Status,Configuration summary
+Reduced_Cost_Estimate,US East (N. Virginia),Cognito,Amazon Cognito,0,749.25,8991,USD,,"Number of monthly active users (MAU) (50000), Advanced security features (Disabled)"
+Reduced_Cost_Estimate,US East (N. Virginia),Web Server,Amazon EC2 ,0,1450.218,17402.62,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Weekly, Baseline: 4, Peak: 6, Duration of peak: 4 Day 0 Hr 0 Min), Advance EC2 instance (m7g.4xlarge), Pricing strategy ( 3yr  No Upfront), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),Application Server,Amazon EC2 ,0,1375.278295,16503.34,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Weekly, Baseline: 4, Peak: 6, Duration of peak: 3 Day 0 Hr 0 Min), Advance EC2 instance (m7g.4xlarge), Pricing strategy ( 3yr  No Upfront), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),CloudFront,Amazon CloudFront,0,62.5,750,USD,,"Data transfer out to internet (500 GB per month), Data transfer out to origin (500 GB per month), Number of requests (HTTPS) (10000000 per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),s3,S3 Standard,0,235.52,2826.24,USD,,S3 Standard storage (10 TB per month)
+Reduced_Cost_Estimate,US East (N. Virginia),s3,Data Transfer,0,0,0,USD,,"DT Inbound: Not selected (0 TB per month), DT Outbound: Amazon CloudFront (1 TB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),Application load balancer,Application Load Balancer,0,98.47,1181.64,USD,,Number of Application Load Balancers (4)
+Reduced_Cost_Estimate,US East (N. Virginia),Route 53,Amazon Route 53,0,104,1248,USD,,Hosted Zones (4)
+Reduced_Cost_Estimate,US East (N. Virginia),VPC,VPN Connection,0,667,8004,USD,,"Working days per month (30), Number of subnet associations (4)"
+Reduced_Cost_Estimate,US East (N. Virginia),VPC,Network Address Translation (NAT) Gateway,0,110.7,1328.4,USD,,Number of NAT Gateways (2)
+Reduced_Cost_Estimate,US East (N. Virginia),RDS,Amazon RDS Custom for SQL Server,0,1086.24,13034.88,USD,,"Storage for each RDS Custom for SQL Server instance (General Purpose SSD (gp2)), Storage amount (1 TB), Instance type (db.r5.xlarge), Number of RDS Custom for SQL Server instances (2), Utilization (On-Demand only) (100 %Utilized/Month), Database edition (Developer), Deployment option (Single-AZ), License (Customer-provided), Pricing strategy (OnDemand)"
+Reduced_Cost_Estimate,US East (N. Virginia),Elastic IPs,Amazon Elastic IP,0,65.94,791.28,USD,,"Number of EC2 instances (6), Number of EIPs per instance (4)"
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+Acknowledgement,,,,,,,,,
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+Cost reduction measures:,,,,,,,,,
+1,Disable advanced security features in Amazon Cognito and push 100% of users to authenticate using SAML or OIDC instead of using a pool of users,,,,,,,,
+2,Disable Multi-AZ redundancy for RDS databases,,,,,,,,
+,,,,,,,,,
+Rationale,,,,,,,,,
+"Multi-AZ redundany and advanced security features for Amazon Cognito were disabled so that performance of the application would not be affected. Instead, 100% of the users would be pushed to authenticate using SAML or OIDC ",,,,,,,,,

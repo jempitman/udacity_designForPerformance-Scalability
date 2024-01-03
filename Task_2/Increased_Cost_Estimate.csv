@@ -1,0 +1,43 @@
+﻿Estimate summary,,,,,,,,,
+Upfront cost,Monthly cost,Total 12 months cost,Currency,,,,,,
+0,18653.12,223837.44,USD,,,,,,
+,,* Includes upfront cost,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+Detailed Estimate,,,,,,,,,
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Status,Configuration summary
+Primary,US East (N. Virginia),Increased_Cost_Estimate_RegionA,Amazon Cognito,0,2574.25,30891,USD,,"Advanced security features (Enabled), Number of monthly active users (MAU) (50000)"
+Primary,US East (N. Virginia),Increased_Cost_Estimate-CloudFront,Amazon CloudFront,0,20.5,246,USD,,"Data transfer out to internet (100 GB per month), Data transfer out to origin (100 GB per month), Number of requests (HTTPS) (10000000 per month)"
+Primary,US East (N. Virginia),Increased_Cost_Estimate-Route53,Amazon Route 53,0,103,1236,USD,,Hosted Zones (2)
+Primary,US East (N. Virginia),Increased_Cost_Estimate,S3 Standard,0,235.52,2826.24,USD,,S3 Standard storage (10 TB per month)
+Primary,US East (N. Virginia),Increased_Cost_Estimate,Data Transfer,0,10.24,122.88,USD,,"DT Inbound: All other regions (1 TB per month), DT Outbound: US East (Ohio) (1 TB per month)"
+Primary,US East (N. Virginia),VPC_us-east-1,VPN Connection,0,667,8004,USD,,"Working days per month (30), Number of subnet associations (4)"
+Primary,US East (N. Virginia),VPC_us-east-1,Network Address Translation (NAT) Gateway,0,157.86,1894.32,USD,,Number of NAT Gateways (2)
+Primary,US East (N. Virginia),Increased_Cost_Estimate-WebServer,Amazon EC2 ,0,2912.598,34951.18,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Weekly, Baseline: 4, Peak: 6, Duration of peak: 4 Day 0 Hr 0 Min), Advance EC2 instance (m7g.8xlarge), Pricing strategy ( 3yr  No Upfront), Enable monitoring (enabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Primary,US East (N. Virginia),Increased_Cost_Estimate-WebServer,Amazon EC2 ,0,2912.598,34951.18,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Weekly, Baseline: 4, Peak: 6, Duration of peak: 4 Day 0 Hr 0 Min), Advance EC2 instance (m7g.8xlarge), Pricing strategy ( 3yr  No Upfront), Enable monitoring (enabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Primary,US East (N. Virginia),Primary Elastic IPs,Amazon Elastic IP,0,65.94,791.28,USD,,"Number of EC2 instances (6), Number of EIPs per instance (4)"
+,,,,,,,,,
+Redundancy,US East (Ohio),WebServer-Redundancy,Amazon EC2 ,0,2899.998,34799.98,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Weekly, Baseline: 4, Peak: 6, Duration of peak: 4 Day 0 Hr 0 Min), Advance EC2 instance (m7g.8xlarge), Pricing strategy ( 3yr  No Upfront), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Redundancy,US East (Ohio),ApplicationServer,Amazon EC2 ,0,2750.26459,33003.18,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Weekly, Baseline: 4, Peak: 6, Duration of peak: 3 Day 0 Hr 0 Min), Advance EC2 instance (m7g.8xlarge), Pricing strategy ( 3yr  No Upfront), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Redundancy,US East (Ohio),ElasticLoadBalancer-Redundancy,Application Load Balancer,0,81.7,980.4,USD,,Number of Application Load Balancers (4)
+Redundancy,US East (Ohio),Redundancy VPC,VPN Connection,0,667,8004,USD,,"Working days per month (30), Number of subnet associations (4)"
+Redundancy,US East (Ohio),Redundancy VPC,Network Address Translation (NAT) Gateway,0,110.7,1328.4,USD,,Number of NAT Gateways (2)
+Redundancy,US East (Ohio),DB redundancy,Amazon RDS Custom for SQL Server,0,2172.48,26069.76,USD,,"Storage for each RDS Custom for SQL Server instance (General Purpose SSD (gp2)), Storage amount (1 TB), Instance type (db.r5.xlarge), Number of RDS Custom for SQL Server instances (2), Utilization (On-Demand only) (100 %Utilized/Month), Database edition (Developer), Deployment option (Multi-AZ), License (Customer-provided), Pricing strategy (OnDemand)"
+Redundancy,US East (Ohio),Redundancy bucket,S3 Standard,0,235.52,2826.24,USD,,S3 Standard storage (10 TB per month)
+Redundancy,US East (Ohio),Redundancy bucket,Data Transfer,0,10.24,122.88,USD,,"DT Inbound: All other regions (1 TB per month), DT Outbound: US East (N. Virginia) (1 TB per month)"
+Redundancy,US East (Ohio),Redundant Elastic IP,Amazon Elastic IP,0,65.94,791.28,USD,,"Number of EC2 instances (6), Number of EIPs per instance (4)"
+,,,,,,,,,
+,,,,,,,,,
+Acknowledgement,,,,,,,,,
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,,,
+,,,,,,,,,
+Increased budget adjustments,,,,,,,,,
+Upgraded application and web server EC2 instances (to m7g.8xlarge from m7g.4xlarge),,,,,,,,,
+Additional NAT gateway for application server in public subnet in secondary AZ,,,,,,,,,
+Create VPC with 4 subnets in redundacy region and 2 NAT gateways (us-east-2),,,,,,,,,
+Replicate application and web servers in redundancy region,,,,,,,,,
+Replicate master and read replica RDS DBs in redundancy region,,,,,,,,,
+Replicate s3 cloudfront bucket in redundancy region,,,,,,,,,
+,,,,,,,,,
+Rationale,,,,,,,,,
+The increased budget allows for a full set of computational and DB resources to be set up on a redundancy region,,,,,,,,,
