@@ -16,6 +16,7 @@ resource "aws_instance" "UdacityT2" {
 }
 
 # TODO: provision 2 m4.large EC2 instances named Udacity M4
+/*
 resource "aws_instance" "UdacityM4" {
   ami           = "ami-0005e0cfe09cc9050"
   instance_type = "m4.large"
@@ -25,4 +26,4 @@ resource "aws_instance" "UdacityM4" {
   tags = {
     Name = "Udacity M4"
   }
-}
+}*/
